@@ -1,8 +1,8 @@
-module.exports = function() {
-    const presets = ["@babel/preset-env"];
-    const plugins = [];
-    return {
-        presets,
-        plugins
-    };
-}
+module.exports = function webpackSetup() {
+  const presets = ['@babel/preset-env'];
+  const plugins = [];
+  return {
+    presets,
+    plugins,
+  };
+};

@@ -6,12 +6,14 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "babel-node": "babel-node"
   },
   "author": "liminal18",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",

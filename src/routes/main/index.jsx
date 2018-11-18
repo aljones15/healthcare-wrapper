@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class Main exteneds React.PureComponent {
+export class Main extends React.PureComponent {
   constructor(props) { 
     super(props)
   }
@@ -9,3 +9,5 @@ class Main exteneds React.PureComponent {
     return(<div id="main">MAIN</div>);
   }
 }
+
+export default Main;

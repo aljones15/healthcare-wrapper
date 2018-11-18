@@ -1,2 +1,2 @@
-import React from react;
-import clients from '../api';
+import React from 'react';
+import clients from '../../api';

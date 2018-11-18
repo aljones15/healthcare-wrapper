@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router'
+import AppRouter from './routes';
 
 const wrapper = document.getElementById('app');
-const Wrapper = () => (<div>WRAPPER</div>);
-wrapper ? ReactDOM.render(<Wrapper />, wrapper) : false;
+wrapper ? ReactDOM.render(<AppRouter />, wrapper) : false;

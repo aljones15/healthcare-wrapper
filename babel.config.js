@@ -1,4 +1,5 @@
-module.exports = function webpackSetup() {
+module.exports = function babelSetup(api) {
+  api.cache(true);
   const presets = ['@babel/preset-env', '@babel/preset-react'];
   const plugins = [];
   return {

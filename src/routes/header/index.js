@@ -4,6 +4,15 @@ import { Link } from 'react-router-dom';
 import { MenuItem, Button, Breadcrumbs, Breadcrumb, Icon, Navbar } from "@blueprintjs/core";
 const { Group } = Navbar;
 
+const selectOptions = [
+  {title: 'Articles', icon:'star', path:'/articles'},
+  {title: 'Blog', icon:'star', path:'/blog'},
+  {title: 'Questions', icon:'star', path:'/questions'},
+  {title: 'Glossary', icon:'star', path:'/glossary'},
+  {title: 'States', icon:'star', path:'/states'},
+  {title: 'Topics', icon:'star', path:'/topics'},
+];
+
 export class RouterHeader extends React.PureComponent {
   constructor(props) { 
     super(props);
@@ -21,6 +30,10 @@ export class RouterHeader extends React.PureComponent {
         <Breadcrumb {...rest}><Icon icon={icon} /> <span>{text}</span></Breadcrumb>
       );
   }
+  renderOption({title, icon, path}){
+    const { history } = this.props;
+    return(<MenuItem key={title} text={title} onClick={() => history.push(path)} />);
+  }
   render() {
     return(
       <Navbar id="router-header">
@@ -35,10 +48,10 @@ export class RouterHeader extends React.PureComponent {
           </Link>
           <Navbar.Divider />
           <Select
-            items={["articles", "blog"]}
-            itemRenderer={title => <MenuItem key={title} text={title} />}
+            items={selectOptions}
+            itemRenderer={(props) => this.renderOption(props)}
             noResults={<MenuItem disabled={true} text="No results." />}
-            onItemSelect={(selected) => console.log('slected', selected)}
+            onItemSelect={({path}) => this.props.history.push(path)}
           >
             <Button icon='double-chevron-right' text='Select'/>
           </Select>

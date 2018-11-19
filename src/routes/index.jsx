@@ -8,6 +8,7 @@ import Glossary from './glossary';
 import States from './states';
 import Topics from './topics';
 import Page from './page';
+import RouterHeader from './header';
 
 export class AppRouter extends React.PureComponent {
   constructor(props) {
@@ -17,7 +18,8 @@ export class AppRouter extends React.PureComponent {
     return (
       <Router>
         <div id="router-container">
-          <Route path="/" component={Main}/>
+          <Route path='*' component={RouterHeader} />
+          <Route path="/" exact component={Main}/>
           <Route path="/articles" component={Articles} />
           <Route path="/blog" component={Blog} />
           <Route path="/questions" component={Questions} />

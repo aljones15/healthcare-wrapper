@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from '@blueprintjs/select';
 import { Link } from 'react-router-dom';
-import { Button, Breadcrumbs, Breadcrumb, Icon, Navbar } from "@blueprintjs/core";
+import { MenuItem, Button, Breadcrumbs, Breadcrumb, Icon, Navbar } from "@blueprintjs/core";
 const { Group } = Navbar;
 
 export class RouterHeader extends React.PureComponent {
@@ -36,7 +36,9 @@ export class RouterHeader extends React.PureComponent {
           <Navbar.Divider />
           <Select
             items={["articles", "blog"]}
-            itemRenderer={title => <div key={title}>{title}</div>}
+            itemRenderer={title => <MenuItem key={title} text={title} />}
+            noResults={<MenuItem disabled={true} text="No results." />}
+            onItemSelect={(selected) => console.log('slected', selected)}
           >
             <Button icon='double-chevron-right' text='Select'/>
           </Select>

@@ -1,5 +1,6 @@
 import React from 'react';
-import Container from './container';
+import Container from '../container';
+import View from './view';
 
 export class Questions extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ export class Questions extends React.Component {
   }
   render() {
     return (
-      <div>Questions</div>
+      <Container section="Questions"><View /></Container>
     );
   }
 }

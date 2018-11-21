@@ -1,5 +1,6 @@
 import React from 'react';
-import Container from './container';
+import Container from '../container';
+import View from './view';
 
 export class Articles extends React.Component {
   constructor(props) {
@@ -7,7 +8,9 @@ export class Articles extends React.Component {
   }
   render() {
     return (
-      <div>Articles</div>
+      <Container section="Articles">
+        <View />
+      </Container>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from './container';
+import Container from '../container';
 
 export class Page extends React.Component {
   constructor(props) {

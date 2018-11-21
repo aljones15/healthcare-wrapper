@@ -35,6 +35,9 @@ export class RouterHeader extends React.PureComponent {
     return(<MenuItem key={title} text={title} onClick={() => history.push(path)} />);
   }
   render() {
+    const { location : _loc } = this.props;
+    const {pathname = "Select" } = _loc;
+    const select = pathname == '/' ? "Select" : pathname.replace(/\//, '');
     return(
       <Navbar id="router-header">
         <Group>
@@ -53,7 +56,7 @@ export class RouterHeader extends React.PureComponent {
             noResults={<MenuItem disabled={true} text="No results." />}
             onItemSelect={({path}) => this.props.history.push(path)}
           >
-            <Button icon='double-chevron-right' text='Select'/>
+            <Button icon='double-chevron-right' text={select} />
           </Select>
         </Group>
       </Navbar>

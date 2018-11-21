@@ -1,5 +1,6 @@
 import React from 'react';
-import Container from './container';
+import Container from '../container';
+import View from './view';
 
 export class Glossary extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ export class Glossary extends React.Component {
   }
   render() {
     return (
-      <div>Glossary</div>
+      <Container section="Glossary"><View /></Container>
     );
   }
 }

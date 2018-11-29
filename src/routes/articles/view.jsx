@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HTMLTable } from '@blueprintjs/core';
-
 export function View(props) {
   console.log('View Articles ', props);
+  const [selected, setSelected ] = useState(null);
   const articles = props.data ? props.data.articles : [];
   const renderRows = () => articles.map(article => (
     <tr key={article.path}><td>{article.title}</td></tr>));

@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -7,6 +8,7 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html',
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [

@@ -6,12 +6,12 @@ export function View(props) {
   const [selected, setSelected ] = useState(null);
   const articles = props.data ? props.data.articles : [];
   const renderRows = () => articles.map(article => (
-    <Article
-      key={article.path}
+    article ? <Article
+      key={article.path || Date.now()}
       setSelected={setSelected}
       article={article}
       selected={selected} 
-    />
+    /> : null
   ));
   return (
     <HTMLTable bordered={false} interactive={true}>

@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, Icon, Text } from '@blueprintjs/core';
 
 export function Article({article, selected, setSelected}) {
-  console.log('Article ', article);
   const { date, page_topic, path, title, bite, categories = [], lang, published } = article;
   const currentSelection = path === selected;
   const _date = new Date(date);
@@ -25,7 +24,7 @@ export function Article({article, selected, setSelected}) {
         {lang}
       </td>
       <td colSpan={1}>
-        {page_topic}
+        {page_topic || 'None'}
       </td>
       <td colSpan={1}>
         {published ? 'yes' : 'no'}

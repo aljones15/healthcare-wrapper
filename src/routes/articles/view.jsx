@@ -3,9 +3,7 @@ import { HTMLTable } from '@blueprintjs/core';
 import { Article } from './article';
 
 export function View(props) {
-  console.log('View Articles ', props);
   const [selected, setSelected ] = useState(null);
-  console.log('selected ', selected);
   const articles = props.data ? props.data.articles : [];
   const renderRows = () => articles.map(article => (
     <Article
@@ -24,6 +22,8 @@ export function View(props) {
           <th>Categories</th>
           <th>Language</th>
           <th>Topic</th>
+          <th>Published</th>
+          <th>Date</th>
         </tr>
       </thead>
       <tbody>

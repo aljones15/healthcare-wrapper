@@ -2,8 +2,10 @@ import React from 'react';
 import { Card, Icon, Text } from '@blueprintjs/core';
 
 export function Article({article, selected, setSelected}) {
-  const { page_topic, path, title, bite, categories = [], lang } = article;
+  console.log('Article ', article);
+  const { date, page_topic, path, title, bite, categories = [], lang, published } = article;
   const currentSelection = path === selected;
+  const _date = new Date(date);
   return (
     <tr
       key={path}
@@ -17,7 +19,7 @@ export function Article({article, selected, setSelected}) {
         <Icon icon="link" />
       </td>
       <td colSpan={1}>
-        {categories.join(', ')}
+        {categories.length ? categories.join(', ') : 'None'}
       </td>
       <td colSpan={1}>
         {lang}
@@ -25,7 +27,12 @@ export function Article({article, selected, setSelected}) {
       <td colSpan={1}>
         {page_topic}
       </td>
-
+      <td colSpan={1}>
+        {published ? 'yes' : 'no'}
+      </td>
+      <td colSpan={1}>
+        {_date.toLocaleDateString()}
+      </td>
     </tr>
   );
 }

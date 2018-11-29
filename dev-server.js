@@ -10,7 +10,7 @@ new WebpackDevServer(webpack(config), {
     historyApiFallback: true,
     hot: true,
     inline: true,
-    contentBase: path.join(__dirname, 'src')
+    contentBase: path.join(__dirname)
 }).listen(port, ip, function (err) {
     if(err) {
         return console.log(err);

@@ -9,7 +9,6 @@ const iframeStyle = {
 };
 
 export default function({data}) {
-  console.log('Page View ', data);
   const {
     title,
     bite,

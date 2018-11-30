@@ -1,5 +1,11 @@
 import React from 'react';
+import { Spinner } from '@blueprintjs/core';
 import clients from '../../api';
+
+const spinnerStyle = {
+  margin: '1rem',
+  padding: '1rem'
+}
 
 export class Container extends React.PureComponent {
   constructor(props) {
@@ -32,6 +38,13 @@ export class Container extends React.PureComponent {
     return React.Children.map(this.props.children, (kid) => React.cloneElement(kid, this.state));
   }
   render() {
+    if (this.state.loading) {
+      return(
+        <div style={spinnerStyle}>
+          <Spinner intent='primary' />
+        </div>
+      );
+    }
     return(
       <div className="container">
         {this.renderKids()}

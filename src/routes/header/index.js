@@ -5,6 +5,11 @@ import { MenuItem, Button, Icon, Navbar } from "@blueprintjs/core";
 const { Group } = Navbar;
 import { SelectOptions } from './options';
 
+const logoStyle = {
+  width: '200px',
+  margin: '10px',
+};
+
 export class RouterHeader extends React.PureComponent {
   constructor(props) { 
     super(props);
@@ -20,6 +25,9 @@ export class RouterHeader extends React.PureComponent {
     return(
       <Navbar id="router-header">
         <Group>
+          <img src='https://www.healthcare.gov/images/logo@2x.png' style={logoStyle} />
+          <Navbar.Divider />
+
           <Link to='/'>
             <Icon icon="home"/>
             <span>{' '}Home</span>

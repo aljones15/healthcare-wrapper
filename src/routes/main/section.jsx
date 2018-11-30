@@ -9,23 +9,23 @@ function getCallout(title, icon) {
   switch(title) {
     case 'Articles': {
       return(
-        <Text>Article</Text>
+        <Text>Your health is important and our Articles will walk you through everything from tax exemptions (subsidize your hottub) to Insurance Provider Ratings  </Text>
       );
     }
     case 'States': {
       return (<Text>States</Text>);
     }
     case 'Topics': {
-      return (<Text>Topics</Text>);
+      return (<Text>See a list of common Health Care topics</Text>);
     }
     case 'Blog': {
-      return (<Text>Blog</Text>);
+      return (<Text>Stay current with the latest blog posts from the U.S. Health Care's Buraeu</Text>);
     }
     case 'Questions': {
-      return (<Text>Questions</Text>);
+      return (<Text>Browse our FAQ to find informative answers to the maelstrom of Health related questions</Text>);
     }
     case 'Glossary': {
-      return (<Text>Glossary</Text>);
+      return (<Text>Our Glossary providers easy and well indexed references to help get you up to speed on health care</Text>);
     }
     default:
       throw new Error(`Unknown Section ${title}`);

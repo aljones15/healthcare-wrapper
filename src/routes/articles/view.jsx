@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { HTMLTable } from '@blueprintjs/core';
 import { Article } from './article';
+import Table from '../table';
 
 export function View(props) {
   const [selected, setSelected ] = useState(null);

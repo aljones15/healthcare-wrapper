@@ -4,8 +4,8 @@ import { Row } from './row';
 
 export function View(props) {
   const [selected, setSelected ] = useState(null);
-  const { dataName, rowType } = props;
-  const rows = props.data ? props.data[dataName] : [];
+  const { rowType } = props;
+  const rows = props.data || [];
   const renderRows = () => rows.map(row => (
     row ? <Row
       key={row.path || row.title + row.date}

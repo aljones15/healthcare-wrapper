@@ -7,6 +7,12 @@ module.exports = {
   entry: {
     app: './src/index.jsx'
   },
+  devServer: {
+   hot: true,
+   inline: true,
+   historyApiFallback: true,
+   watchContentBase: true
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',

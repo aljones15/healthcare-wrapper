@@ -3,15 +3,7 @@ import { Select } from '@blueprintjs/select';
 import { Link } from 'react-router-dom';
 import { MenuItem, Button, Icon, Navbar } from "@blueprintjs/core";
 const { Group } = Navbar;
-
-const selectOptions = [
-  {title: 'Articles', icon:'star', path:'/articles'},
-  {title: 'Blog', icon:'star', path:'/blog'},
-  {title: 'Questions', icon:'star', path:'/questions'},
-  {title: 'Glossary', icon:'star', path:'/glossary'},
-  {title: 'States', icon:'star', path:'/states'},
-  {title: 'Topics', icon:'star', path:'/topics'},
-];
+import { SelectOptions } from './options';
 
 export class RouterHeader extends React.PureComponent {
   constructor(props) { 
@@ -34,7 +26,7 @@ export class RouterHeader extends React.PureComponent {
           </Link>
           <Navbar.Divider />
           <Select
-            items={selectOptions}
+            items={SelectOptions}
             itemRenderer={(props) => this.renderOption(props)}
             noResults={<MenuItem disabled={true} text="No results." />}
             onItemSelect={({path}) => this.props.history.push(path)}

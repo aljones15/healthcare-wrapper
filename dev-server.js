@@ -5,6 +5,7 @@ const config = require('./webpack.config');
 
 const devServer = {
    hot: true,
+   inline: true,
    historyApiFallback: true,
    watchContentBase: true
 };

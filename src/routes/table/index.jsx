@@ -6,11 +6,12 @@ export function View(props) {
   const [selected, setSelected ] = useState(null);
   const { rowType } = props;
   const rows = props.data || [];
-  const renderRows = () => rows.map(row => (
+  const renderRows = () => rows.map((row, index) => (
     row ? <Row
       key={row.path || row.title + row.date}
       setSelected={setSelected}
       row={row}
+      index={index}
       selected={selected} 
     /> : null
   ));

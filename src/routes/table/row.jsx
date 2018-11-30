@@ -2,18 +2,18 @@ import React from 'react';
 import { Card, Icon, Text } from '@blueprintjs/core';
 import { Link } from 'react-router-dom';
 
-export function Row({row, selected, setSelected}) {
+export function Row({row, index, selected, setSelected}) {
   const {
     url, date, page_topic,
     path, title, bite, 
     categories = [], lang, published 
   } = row;
-  const currentSelection = path === selected;
+  const currentSelection = index === selected;
   const _date = new Date(date);
   return (
     <tr
       key={path}
-      onClick={() => setSelected(path)}
+      onClick={() => setSelected(index)}
     >
       <td colSpan={1}>
         {currentSelection ? <h5>{title}</h5> : title}

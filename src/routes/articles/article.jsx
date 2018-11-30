@@ -1,8 +1,13 @@
 import React from 'react';
 import { Card, Icon, Text } from '@blueprintjs/core';
+import { Link } from 'react-router-dom';
 
 export function Article({article, selected, setSelected}) {
-  const { date, page_topic, path, title, bite, categories = [], lang, published } = article;
+  const {
+    url, date, page_topic,
+    path, title, bite, 
+    categories = [], lang, published 
+  } = article;
   const currentSelection = path === selected;
   const _date = new Date(date);
   return (
@@ -15,7 +20,9 @@ export function Article({article, selected, setSelected}) {
         <Text>{bite}</Text>
       </td>
       <td colSpan={1}>
-        <Icon icon="link" />
+        <Link to={`page${url}`}>
+          <Icon icon="link" />
+        </Link>
       </td>
       <td colSpan={1}>
         {categories.length ? categories.join(', ') : 'None'}

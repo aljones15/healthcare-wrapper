@@ -11,10 +11,20 @@ export class Container extends React.PureComponent {
     }
   }
   componentDidMount() {
-    const { section } = this.props;
-    clients.english.Content[section]().then(response => {
+    const { section, options = null } = this.props;
+    console.log('options ', options);
+    if (/page/i.test(section)) {
+      console.log('page test succeeds ', section);
+      return clients.getPage(options.uri).then(response => {
       const data = response.data();
-      console.log('response ', data);
+      console.log(`${section} response`, data);
+      this.setState(() => ({loading: false, error: null, data}))
+    });
+
+    }
+    clients.english.Content[section](options).then(response => {
+      const data = response.data();
+      console.log(`${section} response`, data);
       this.setState(() => ({loading: false, error: null, data}))
     });
   }

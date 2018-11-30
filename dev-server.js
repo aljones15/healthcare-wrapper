@@ -3,15 +3,15 @@ const WebpackDevServer = require('webpack-dev-server');
 const path = require('path');
 const config = require('./webpack.config');
 
+const devServer = {
+   hot: true,
+   historyApiFallback: true,
+   watchContentBase: true
+};
 
 const port = process.env.PORT || 4000;
 const ip = process.env.IP || '0.0.0.0';
-new WebpackDevServer(webpack(config), {
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    contentBase: path.join(__dirname)
-}).listen(port, ip, function (err) {
+new WebpackDevServer(webpack(config), devServer).listen(port, ip, function (err) {
     if(err) {
         return console.log(err);
     }

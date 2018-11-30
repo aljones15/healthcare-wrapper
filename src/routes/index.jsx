@@ -28,6 +28,7 @@ export class AppRouter extends React.PureComponent {
             <Route path="/glossary" component={Glossary} />
             <Route path="/states" component={States} />
             <Route path="/topics" component={Topics} />
+            <Route path="/page/:pageid" component={Page} />
             <Route component={NoMatch} />
           </Switch>
         </div>

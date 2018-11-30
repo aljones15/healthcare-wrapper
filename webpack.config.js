@@ -2,7 +2,11 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  target: 'web',
   mode: 'development',
+  entry: {
+    app: './src/index.jsx'
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',

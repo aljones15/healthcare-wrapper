@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add react-16.7.0-alpha.2
+  /usr/local/bin/node /usr/local/bin/yarn start
 
 PATH: 
-  /Users/andrewjones/.nix-profile/bin:/anaconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/andrewjones/Programs/sonarlint-cli-2.1.0.566/bin:/usr/local/mariadb/server/bin
+  /Users/andrewjones/.nix-profile/bin:/anaconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/andrewjones/Programs/sonarlint-cli-2.1.0.566/bin:/usr/local/mariadb/server/bin:/anaconda3/bin
 
 Yarn version: 
   1.5.1
@@ -58,8 +58,8 @@ npm manifest:
       "@blueprintjs/core": "^3.9.0",
       "@blueprintjs/select": "^3.3.0",
       "mappersmith": "^2.26.0",
-      "react": "^16.6.3",
-      "react-dom": "^16.6.3",
+      "react": "16.7.0-alpha.2",
+      "react-dom": "16.7.0-alpha.2",
       "react-redux": "^5.1.1",
       "react-router-dom": "^4.3.1",
       "redux": "^4.0.1",
@@ -5961,14 +5961,14 @@ Lockfile:
       minimist "^1.2.0"
       strip-json-comments "~2.0.1"
   
-  react-dom@^16.6.3:
-    version "16.6.3"
-    resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.6.3.tgz#8fa7ba6883c85211b8da2d0efeffc9d3825cccc0"
+  react-dom@16.7.0-alpha.2:
+    version "16.7.0-alpha.2"
+    resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.7.0-alpha.2.tgz#16632880ed43676315991d8b412cce6975a30282"
     dependencies:
       loose-envify "^1.1.0"
       object-assign "^4.1.1"
       prop-types "^15.6.2"
-      scheduler "^0.11.2"
+      scheduler "^0.12.0-alpha.2"
   
   react-is@^16.3.2, react-is@^16.6.0, react-is@^16.6.1, react-is@^16.6.3:
     version "16.6.3"
@@ -6043,14 +6043,14 @@ Lockfile:
       prop-types "^15.6.2"
       react-lifecycles-compat "^3.0.4"
   
-  react@^16.6.3:
-    version "16.6.3"
-    resolved "https://registry.yarnpkg.com/react/-/react-16.6.3.tgz#25d77c91911d6bbdd23db41e70fb094cc1e0871c"
+  react@16.7.0-alpha.2:
+    version "16.7.0-alpha.2"
+    resolved "https://registry.yarnpkg.com/react/-/react-16.7.0-alpha.2.tgz#924f2ae843a46ea82d104a8def7a599fbf2c78ce"
     dependencies:
       loose-envify "^1.1.0"
       object-assign "^4.1.1"
       prop-types "^15.6.2"
-      scheduler "^0.11.2"
+      scheduler "^0.12.0-alpha.2"
   
   read-pkg-up@^1.0.1:
     version "1.0.1"
@@ -6474,6 +6474,13 @@ Lockfile:
   scheduler@^0.11.2:
     version "0.11.2"
     resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.11.2.tgz#a8db5399d06eba5abac51b705b7151d2319d33d3"
+    dependencies:
+      loose-envify "^1.1.0"
+      object-assign "^4.1.1"
+  
+  scheduler@^0.12.0-alpha.2:
+    version "0.12.0-alpha.2"
+    resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.12.0-alpha.2.tgz#2a8bc8dc6ecdb75fa6480ceeedc1f187c9539970"
     dependencies:
       loose-envify "^1.1.0"
       object-assign "^4.1.1"
@@ -7686,14 +7693,16 @@ Lockfile:
       yargs-parser "^11.1.0"
 
 Trace: 
-  Error: https://registry.yarnpkg.com/react-16.7.0-alpha.2: Not found
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:65019:18)
-      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:132430:22)
-      at Request.emit (events.js:182:13)
-      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:133413:10)
-      at Request.emit (events.js:182:13)
-      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:133333:12)
-      at Object.onceWrapper (events.js:273:13)
-      at IncomingMessage.emit (events.js:187:15)
-      at endReadableNT (_stream_readable.js:1081:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c node dev-server.js
+  Directory: /Users/andrewjones/Programs/javascript/GovWizely
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:182:13)
+      at maybeClose (internal/child_process.js:961:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:248:5)

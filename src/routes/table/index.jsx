@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
-import { HTMLTable } from '@blueprintjs/core';
+import { HTMLTable, Callout, Card } from '@blueprintjs/core';
 import { Row } from './row';
+
+const sectionStyle = {
+  margin: '1rem',
+  padding: '0rem'
+};
 
 export function View(props) {
   const [selected, setSelected ] = useState(null);
@@ -15,6 +20,15 @@ export function View(props) {
       selected={selected} 
     /> : null
   ));
+  if (!rows.length) {
+    return(
+      <Card style={sectionStyle}>
+        <Callout intent='warning' icon='thumbs-down'>
+          We're sorry but there were no results for { rowType }
+        </Callout>
+      </Card>
+    );
+  }
   return (
     <HTMLTable bordered={false} interactive={true}>
       <thead>

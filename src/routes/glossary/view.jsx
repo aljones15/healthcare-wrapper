@@ -1,8 +1,10 @@
 import React from 'react';
+import Table from '../table';
 
-export function View(props) {
+export function View({data}) {
+  const glossary = data ? data.glossary : [];
   return(
-    <div>Glossary</div>
+    <Table data={glossary} rowType='Term' />
   );
 }
 export default View;

@@ -1,8 +1,26 @@
 import React from 'react';
+import { Card, H5, Text, Divider } from '@blueprintjs/core';
 
-export default function(props) {
-  console.log('Page View ', props);
+const iframeStyle = {
+  width: '100%',
+  height: '100%',
+  padding: '1rem',
+  marginTop: '1rem'
+};
+
+export default function({data}) {
+  console.log('Page View ', data);
+  const {
+    title,
+    bite,
+    content
+  } = data;
   return (
-    <div>Page</div>
+    <Card>
+      <H5>{title}</H5>
+      <Text>{bite}</Text>
+      <Divider />
+      <iframe srcDoc={content} style={iframeStyle} />
+    </Card>
   );
 }

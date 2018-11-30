@@ -14,7 +14,7 @@ function getCallout(title, icon) {
       );
     }
     case 'States': {
-      return (<Text>States</Text>);
+      return (<Text>Get information about Health Care in each State</Text>);
     }
     case 'Topics': {
       return (<Text>See a list of common Health Care topics</Text>);

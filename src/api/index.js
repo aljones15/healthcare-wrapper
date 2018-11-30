@@ -25,8 +25,10 @@ const clients = {
   spanish: client(spanishURI),
   getPage(uri) {
     const spanishURL = /^\/es\//i;
-    if(spanishURL.test(uri)) return clients.spanish.Content.Page({uri});
-    return clients.english.Content.Page({uri});
+    const addJson = /\/$/i;
+    const jsonLink = uri.replace(addJson, '.json');
+    if(spanishURL.test(uri)) return clients.spanish.Content.Page({uri: jsonLink});
+    return clients.english.Content.Page({uri: jsonLink});
   }
 };
 

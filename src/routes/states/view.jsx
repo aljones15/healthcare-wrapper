@@ -1,8 +1,10 @@
 import React from 'react';
+import Table from '../table';
 
-export function View(props){
+export function View({data}){
+  const states = data ? data.states : [];
   return(
-    <div>States</div>
+    <Table data={states} rowType='States' />
   );
 }
 

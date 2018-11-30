@@ -1,8 +1,10 @@
 import React from 'react';
+import Table from '../table';
 
 export function View(props) {
+  console.log('Blog props ', props);
   return(
-    <div>Blog</div>
+    <Table {...props} dataName='blog' rowType='Blog Post'/>
   );
 }
 

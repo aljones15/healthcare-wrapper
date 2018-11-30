@@ -4,6 +4,7 @@ import {
   Icon, Callout,
   Elevation, Text 
 } from "@blueprintjs/core";
+import { Link } from 'react-router-dom';
 
 function getCallout(title, icon) {
   switch(title) {
@@ -42,9 +43,11 @@ export default function({title, icon, path}) {
     <Card interactive key={title} elevation={Elevation.TWO} style={sectionStyle}>
       <Callout icon={icon} title={title}>
         {getCallout(title, icon)}
-        <Tag large icon='link'>
-          {title}
-        </Tag>
+        <Link to={path}>
+          <Tag large icon='link'>
+            {title}
+          </Tag>
+        </Link>
       </Callout>
     </Card>
   );
